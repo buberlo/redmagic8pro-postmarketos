@@ -1,0 +1,3 @@
+Using loader tools\zte_toolbox\bin\res\NX729J\devprg ...
+Waiting for the device
+Device detected :)

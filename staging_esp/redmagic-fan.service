@@ -1,0 +1,12 @@
+[Unit]
+Description=Red Magic 8 Pro Centrifugal Turbofan Thermal Controller
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/redmagic_fan.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
