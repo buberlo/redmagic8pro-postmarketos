@@ -39,13 +39,21 @@ This repository tracks the bringup, mainline Linux kernel enablement, hardware d
 ## Status & Progress Checklist
 - [x] Host environment preparation (Android SDK tools, Python 3.12, GitHub CLI)
 - [x] Git repository initialization & remote tracking setup
-- [ ] Bootloader unlocking (`fastboot flashing unlock` & `unlock_critical`)
-- [ ] Stock partition dump & firmware safety backup
-- [ ] UEFI & Mainline kernel boot image staging
-- [ ] PostmarketOS rootfs installation & verification
+- [x] Bootloader unlocking (`fastboot flashing unlock` & `unlock_critical` completed via patched ABL)
+- [x] Stock partition dump & firmware safety backup (`abl_a`, `abl_b`, `devinfo` dumped & verified)
+- [x] UEFI (`Mu-nx729j.img`) & Mainline kernel boot image staging
+- [x] Kernel & Device Tree bug fixes:
+  - [x] GCC clock unfreezing
+  - [x] RPMH clock binding
+  - [x] UFS 300MHz UniPro DME timer clock configuration
+  - [x] UFS link reset fix: restricted high-speed gear to **HS-G1 Rate-A** (`firmware/esp_v2.img`)
+- [ ] **Current Blocker / In-Progress**: Device recovery from BootROM EDL crash dump cookie loop
+  - *Detailed instructions, reverse-engineering findings & recovery scripts:* See **[docs/CURRENT_STATUS_AND_RECOVERY.md](docs/CURRENT_STATUS_AND_RECOVERY.md)**
+- [ ] PostmarketOS rootfs verification & Phosh desktop launch
 - [ ] Hardware driver bringup:
   - [ ] SimpleFB / DRM display framebuffer
   - [ ] Touchscreen input (`evtest` / `libinput`)
   - [ ] GPU 3D acceleration (Vulkan Turnip / Adreno 740)
   - [ ] Qualcomm WCN7850 Wi-Fi (`ath12k`)
   - [ ] Centrifugal cooling fan daemon
+

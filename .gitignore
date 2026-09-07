@@ -13,3 +13,8 @@ firmware/*
 !firmware/*.md
 __pycache__/
 *.pyc
+*.bak*
+tools/busybox*
+tools/ld-musl.so
+tools/pmos_boot_unpacked/
+tools/shellaa64.efi
